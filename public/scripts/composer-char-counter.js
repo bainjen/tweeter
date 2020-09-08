@@ -2,32 +2,29 @@
 
 $(document).ready(function() {
  
+  $('#tweet-text').on('keyup', function (e) {
+    //tracking character count input from user using keyup
+    const currCharCount = $(this).val().length
+    
+    //locating the counter element
+    const counterElem = $(this).parent().children('.under-tweet-input').children('.counter')
+      
+    //represents how many characters are available 
+    // const remainingChars = counterElem.val(); 
 
-// console.log('document.ready works in character count js doc')
+    const remainingChars = 140 - currCharCount;
+    console.log(remainingChars)
 
+    //updating counter elem on DOM to reflect current changes in remaining characters
+    counterElem.text(remainingChars); 
 
-
-// #tweet-text
-
-// change event
-// keydown event
-// keyup event
-// blur event
-// keypress event
-
-  // $('#tweet-text').change(() => { console.log('change event') });
-
-  $('#tweet-text').on('keyup', function(e) {
-    console.log($("#tweet-text").val().length)
-    console.log(this); 
+    if (remainingChars < 0) {
+      counterElem.css('color', 'red'); 
+    } else {
+      counterElem.css('color', '#545149'); 
+    }
   })
 
-  // $('#tweet-text').blur(() => { console.log('blur event') })
-  
-  // $('#tweet-text').keyup(() => { console.log('keyup event') })
-  
-  // $('#tweet-text').keydown(() => { console.log('keydown event') })
 
-  // $('#tweet-text').keypress(() => { console.log('keypress event') })
   
 });
