@@ -5,6 +5,10 @@ align-items: center;
 margin-bottom: 1.5em;
 }
 
+.new-tweet h2 {
+  width: 75%;
+}
+
 form {
   display: flex; 
   flex-direction: column;
@@ -18,6 +22,7 @@ background-color: #D1DDEF;
 resize: none; 
 font-weight: 600; 
 line-height: 1;
+/* height: 12vh;  */
 }
 
 .under-tweet-input{
