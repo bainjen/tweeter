@@ -8,20 +8,20 @@
 const createTweetElement = function (tweetObj) {
   //return a tweet <article> tag containing html structure
 
-  const $tweet = $("<article>").addClass("tweet"); 
+  let $tweet = $("<article>").addClass("tweet"); 
 
   //tweet header
-  const $header = $("<header>").addClass("th-header");
+  let $header = $("<header>").addClass("th-header");
 
   //header children
 
-  const $headerD1 = $("<div>").addClass("name-left");
+  let $headerD1 = $("<div>").addClass("name-left");
   const $avatar = $("<img>").attr("src", tweetObj.user.avatars);
   const $name = $("<h3>").text(tweetObj.user.name);
 
   $headerD1.append($avatar, $name);
 
-  const $headerD2 = $("<div>").addClass("userID");
+  let $headerD2 = $("<div>").addClass("userID");
   const $handle = $("<p>").text(tweetObj.user.handle);
 
   $headerD2 = $headerD2.append($handle); 
@@ -31,21 +31,21 @@ const createTweetElement = function (tweetObj) {
 
   //tweet content
 
-  const $contentContainer = $("<div>").addClass("display-tweet");
+  let $contentContainer = $("<div>").addClass("display-tweet");
   const $contentText = $("<p>").text(tweetObj.content.text);
 
   $contentContainer = $contentContainer.append($contentText);
 
   //tweet footer
-  const $footer = $("<footer>").text(tweetObj.created_at);
+  let $footer = $("<footer>").text(tweetObj.created_at);
 
   //tweet footer children 
   const $timeStamp = $("<p>").addClass("th-header");
 
-  const $footerD2 = $("<div>").addClass("icons");
+  let $footerD2 = $("<div>").addClass("icons");
 
   const $flag = $("<i>").addClass("far fa-flag");
-  const $retweet = $("<i>").addClass("far fa-retweet");
+  const $retweet = $("<i>").addClass("fas fa-retweet");
   const $heart = $("<i>").addClass("far fa-heart");
 
   $footerD2 = $footerD2.append($flag, $retweet, $heart); 
