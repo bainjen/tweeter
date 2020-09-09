@@ -13,7 +13,6 @@ const createTweetElement = function (tweetObj) {
   //tweet header
   const $header = $("<header>").addClass("th-header");
 
-
   //header children
 
   const $headerD1 = $("<div>").addClass("name-left");
@@ -32,7 +31,32 @@ const createTweetElement = function (tweetObj) {
 
   //tweet content
 
+  const $contentContainer = $("<div>").addClass("display-tweet");
+  const $contentText = $("<p>").text(tweetObj.content.text);
+
+  $contentContainer = $contentContainer.append($contentText);
+
   //tweet footer
+  const $footer = $("<footer>").text(tweetObj.created_at);
+
+  //tweet footer children 
+  const $timeStamp = $("<p>").addClass("th-header");
+
+  const $footerD2 = $("<div>").addClass("icons");
+
+  const $flag = $("<i>").addClass("far fa-flag");
+  const $retweet = $("<i>").addClass("far fa-retweet");
+  const $heart = $("<i>").addClass("far fa-heart");
+
+  $footerD2 = $footerD2.append($flag, $retweet, $heart); 
+
+  $footer = $footer.append($timeStamp, $footerD2); 
+
+  //add all of the children to the tweet div
+
+  $tweet = $tweet.append($header, $contentContainer, $footer);
+
+  return $tweet; 
   //moment().startOf('hour').fromNow();
 
 }
