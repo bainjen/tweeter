@@ -14,6 +14,11 @@
   border: 5px solid  #545149; 
 }
 
+.tweet:hover {
+  /* border: solid gray 2px; */
+  box-shadow: 5px 10px #888888;
+}
+
 .th-header {
   display: flex; 
   margin: 1em;
