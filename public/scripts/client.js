@@ -4,113 +4,97 @@
 // This object is taken directly from the initial-tweets.json file in the data-files directory
 
 //++++++++++++++++++++++++++
-$(document).ready(function () {
-
-  //function to build html for tweets dynamically
-
-  const createTweetElement = function (tweetObj) {
-    //return a tweet <article> tag containing html structure
-
-    let $tweet = $("<article>").addClass("tweet");
-
-    //tweet header
-    let $header = $("<header>").addClass("th-header");
-
-    //header children
-
-    let $headerD1 = $("<div>").addClass("name-left");
-    const $avatar = $("<img>").attr("src", tweetObj.user.avatars);
-    const $name = $("<h3>").text(tweetObj.user.name);
-
-    $headerD1.append($avatar, $name);
-
-    let $headerD2 = $("<div>").addClass("userID");
-    const $handle = $("<p>").text(tweetObj.user.handle);
-
-    $headerD2 = $headerD2.append($handle);
-
-    $header = $header.append($headerD1, $headerD2);
 
 
-    //tweet content
+//function to build html for tweets dynamically
 
-    let $contentContainer = $("<div>").addClass("display-tweet");
-    const $contentText = $("<p>").text(tweetObj.content.text);
+const createTweetElement = function (tweetObj) {
 
-    $contentContainer = $contentContainer.append($contentText);
+  const $tweet = $("<article class='tweet'>");
 
-    //tweet footer
-    let $footer = $("<footer>").text(tweetObj.created_at);
+  //tweet header
+  const $header = $("<header class='th-header'>");
 
-    //tweet footer children 
-    const $timeStamp = $("<p>").addClass("th-header");
+  //header children
+  const $headerD1 = $("<div class='name-left'>");
+  const $avatar = $("<img>").attr("src", tweetObj.user.avatars);
+  const $name = $("<h3>").text(tweetObj.user.name);
 
-    let $footerD2 = $("<div>").addClass("icons");
+  $headerD1.append($avatar, $name);
 
-    const $flag = $("<i>").addClass("far fa-flag");
-    const $retweet = $("<i>").addClass("fas fa-retweet");
-    const $heart = $("<i>").addClass("far fa-heart");
+  const $headerD2 = $("<div class='userID'>");
+  const $handle = $("<p>").text(tweetObj.user.handle);
 
-    $footerD2 = $footerD2.append($flag, $retweet, $heart);
+  $headerD2.append($handle);
+  //append the contents of header
+  $header.append($headerD1, $headerD2);
 
-    $footer = $footer.append($timeStamp, $footerD2);
+  //tweet content
+  const $contentContainer = $("<div class='display-tweet'>");
 
-    //add all of the children to the tweet div
+  const $contentText = $("<p>").text(tweetObj.content.text);
+  //append tweet text to container
+  $contentContainer.append($contentText);
 
-    $tweet = $tweet.append($header, $contentContainer, $footer);
+  //tweet footer
+  const $footer = $("<footer>").text(tweetObj.created_at);
 
-    return $tweet;
-    //moment().startOf('hour').fromNow();
+  //tweet footer children 
+  const $timeStamp = $("<p class='th-header'>");
 
-  };
-  //++++++++++++++++create render function++++++
-  const renderTweets = function (tweets) {
-    tweets.forEach((tweet) => {
-      const tweetNode = createTweetElement(tweet);
-      $('#tweets-container').append(tweetNode); 
-    }); 
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
-  }
+  const $footerD2 = $("<div class='icons'>");
+  const $flag = $("<i class='far fa-flag'>");
+  const $retweet = $("<i class='fas fa-retweet'>");
+  const $heart = $("<i class='far fa-heart'>");
+  $footerD2.append($flag, $retweet, $heart);
+  //append footer children to footer
+  $footer.append($timeStamp, $footerD2);
 
-  //+++++dummy data for testing renderTweets function
+  //add all of the children to the tweet div
+  $tweet.append($header, $contentContainer, $footer);
 
-  // Fake data taken from initial-tweets.json
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
+  return $tweet;
+};
+//++++++++++++++++create render function++++++
+
+const renderTweets = function (tweets) {
+  tweets.forEach((tweet) => {
+    const tweetNode = createTweetElement(tweet);
+    $('#tweets-container').append(tweetNode);
+  });
+}
+
+//+++++dummy data for testing renderTweets function
+
+const data = [
+  {
+    "user": {
+      "name": "Newton",
+      "avatars": "https://i.imgur.com/73hZDYK.png"
+      ,
+      "handle": "@SirIsaac"
     },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
-
-
-
-
+    "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+    "created_at": 1461116232227
+  },
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd"
+    },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1461113959088
+  }
+]
+$(document).ready(function () {
   renderTweets(data);
 
 });
-
-
 
   //++++++++++++++++++++++++++ used this data to test createTweetElement function and it worked properly
 
