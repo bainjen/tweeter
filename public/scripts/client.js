@@ -94,7 +94,7 @@ $(document).ready(function () {
     if ($('#tweet-text').val() === '' || null) {
       appendError("You're a goose! 🐙 Type something! Anything!");
     } else if ($('#tweet-text').val().length > 140) {
-      appendError("Ope! You typed too much.🙈 No worries! Edit 'til your heart's content 💕, just keep it under 140!")
+      appendError("Ope! Too many characters 🙈 Love that enthusiasm! 💙 Just keep it under 140!")
     } else {
 
       $.post('/tweets', serializedData)

@@ -20,7 +20,7 @@ nav {
 
 }
 
-.right-side-nav p{
+.right-side-nav p {
   margin-bottom: .2em;
 }
 
@@ -37,4 +37,12 @@ nav {
   align-items: center;
   font-family:'Bungee', sans-serif;
   margin: 1.5em; 
+}
+
+
+@media (min-width: 1024px) {
+  nav {
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
 }
