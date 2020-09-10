@@ -100,6 +100,11 @@ const loadTweets = () => {
   });
 };
 
+const appendError = (message) => {
+  $('#submit-tweet').prepend($("<div class='error'>").text('⚠️' + message + '⚠️').slideDown().delay(3500).hide(500));
+    // .slideDown(100).show(5000)
+}
+
 $(document).ready(function () {
   loadTweets();
   //form submit handler
@@ -110,13 +115,14 @@ $(document).ready(function () {
     console.log(serializedData);
 
     if ($('#tweet-text').val() === '' || null) {
-      alert('tweets must contain at least one character!')
+      appendError("You're a goose! 🐙 Type something! Anything!")
     } else if ($('#tweet-text').val().length > 140) {
-      alert('tweets must be 140 character or fewer!')
+      appendError("Ope! You typed too much.🙈 No worries! Edit 'til your heart's content 💕, just keep it under 140!")
     } else {
 
       $.post('/tweets', serializedData)
         .then((response) => {
+          // console.log("response is: ", response); 
           loadTweets();
           $(this).children('textarea').val('');
         })
