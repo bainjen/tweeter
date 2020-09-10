@@ -36,9 +36,9 @@ const createTweetElement = function (tweetObj) {
   const $timeStamp = $("<p>").text(timeDelta);;
 
   const $footerD2 = $("<div class='icons'>");
-  const $flag = $("<i class='far fa-flag'>");
-  const $retweet = $("<i class='fas fa-retweet'>");
-  const $heart = $("<i class='far fa-heart'>");
+  const $flag = $("<i class='far fa-flag' id='flag'>");
+  const $retweet = $("<i class='fas fa-retweet' id='retweet'>");
+  const $heart = $("<i class='far fa-heart' id='heart'>");
   $footerD2.append($flag, $retweet, $heart);
   //append footer children to footer
   $footer.append($timeStamp, $footerD2);

@@ -39,24 +39,37 @@
   max-width: 75px; 
 }
 
-#userID {
-  /* visibility: hidden; */
-  /* display: none;  */
-  opacity: 0;
-}
-
-.tweet:hover #userID {
-  /* visibility: visible; */
-  /* display: block; */
-  opacity: 1;
-}
-
 .display-tweet {
   margin: 1em; 
   border-style: hidden;
   border-bottom: 5px solid #545149;
   font-weight: 300;
   line-height: 1;
+}
+
+#userID {
+  /* visibility: hidden; */
+  /* display: none;  */
+  opacity: .5;
+}
+
+.tweet:hover #userID {
+  /* visibility: visible; */
+  /* display: block; */
+  opacity: 1;
+  font-weight: bold;
+}
+
+#heart:hover {
+  color: mediumvioletred; 
+}
+
+#retweet:hover {
+  color: mediumvioletred; 
+}
+
+#flag:hover {
+  color: mediumvioletred; 
 }
 /* .tweet-history article {
   width: 90%;
