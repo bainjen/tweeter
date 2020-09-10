@@ -77,9 +77,11 @@ const createTweetElement = function (tweetObj) {
 };
 
 const renderTweets = function (tweets) {
+  const $container = $('#tweets-container')
+  $container.empty();
   tweets.forEach((tweet) => {
     const tweetNode = createTweetElement(tweet);
-    $('#tweets-container').prepend(tweetNode);
+    $container.prepend(tweetNode);
   });
 }
 
