@@ -14,8 +14,8 @@ const createTweetElement = function (tweetObj) {
 
   $headerD1.append($avatar, $name);
 
-  const $headerD2 = $("<div class='userID'>");
-  const $handle = $("<p>").text(tweetObj.user.handle);
+  const $headerD2 = $("<div id='userID'>");
+  const $handle = $("<p class='handle'>").text(tweetObj.user.handle);
 
   $headerD2.append($handle);
   //append the contents of header
