@@ -78,7 +78,9 @@
   align-items: center;
   justify-content: space-between;
   width: 10vw;
+  margin-right: .5em; 
 }
+
 
 /* .icons i {
   margin: 20px, 20px, 20px, 20px;

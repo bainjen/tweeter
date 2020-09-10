@@ -15,7 +15,7 @@ const createTweetElement = function (tweetObj) {
   $headerD1.append($avatar, $name);
 
   const $headerD2 = $("<div id='userID'>");
-  const $handle = $("<p class='handle'>").text(tweetObj.user.handle);
+  const $handle = $("<p>").text(tweetObj.user.handle);
 
   $headerD2.append($handle);
   //append the contents of header
@@ -29,11 +29,11 @@ const createTweetElement = function (tweetObj) {
   $contentContainer.append($contentText);
 
   //tweet footer
-  const timeDelta =  moment(tweetObj.created_at).fromNow(); 
-  const $footer = $("<footer>").text(timeDelta);
-
+  const $footer = $("<footer>")
+  
   //tweet footer children 
-  const $timeStamp = $("<p class='th-header'>");
+  const timeDelta =  moment(tweetObj.created_at).fromNow(); 
+  const $timeStamp = $("<p>").text(timeDelta);;
 
   const $footerD2 = $("<div class='icons'>");
   const $flag = $("<i class='far fa-flag'>");
