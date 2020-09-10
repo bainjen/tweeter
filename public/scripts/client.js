@@ -1,31 +1,31 @@
 //+++++dummy data for testing renderTweets function
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
+// const data = [
+//   {
+//     "user": {
+//       "name": "Newton",
+//       "avatars": "https://i.imgur.com/73hZDYK.png"
+//       ,
+//       "handle": "@SirIsaac"
+//     },
+//     "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//     "created_at": 1461116232227
+//   },
+//   {
+//     "user": {
+//       "name": "Descartes",
+//       "avatars": "https://i.imgur.com/nlhLi3I.png",
+//       "handle": "@rd"
+//     },
+//     "content": {
+//       "text": "Je pense , donc je suis"
+//     },
+//     "created_at": 1461113959088
 
-  }
-]
+//   }
+// ]
 
 //function to build html for tweets dynamically
 const createTweetElement = function (tweetObj) {
@@ -83,9 +83,7 @@ const renderTweets = function (tweets) {
   });
 }
 
-const getTweets = () => {
-
-  // console.log('hello')
+const loadTweets = () => {
   $.ajax({
     url: '/tweets',
     method: 'GET',
@@ -101,25 +99,27 @@ const getTweets = () => {
 };
 
 $(document).ready(function () {
-  // renderTweets(data);
-  getTweets();
-
+  loadTweets();
+  //form submit handler
   const $submitTweet = $('#submit-tweet');
   $submitTweet.on('submit', function (e) {
     e.preventDefault();
     const serializedData = $(this).serialize();
     console.log(serializedData);
 
-    $.post('/tweets', serializedData)
-      .then((response) => {
-        getTweets();
-        $(this).children('textarea').val('');
-      })
+    if ($('#tweet-text').val() === '' || null) {
+      alert('tweets must contain at least one character!')
+    } else if ($('#tweet-text').val().length > 140) {
+      alert('tweets must be 140 character or fewer!')
+    } else {
+
+      $.post('/tweets', serializedData)
+        .then((response) => {
+          loadTweets();
+          $(this).children('textarea').val('');
+        })
+    }
+
   });
-
-
-
-
-
 
 });
