@@ -48,5 +48,8 @@ button {
 .error {
   color: red; 
   font-weight: 600;
+  border: solid 3px red;
+  border-radius: 8px;
+  font-size: 24px;
 }
 

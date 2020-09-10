@@ -74,7 +74,7 @@ const loadTweets = () => {
 };
 
 const appendError = (message) => {
-  $('#submit-tweet').prepend($("<div class='error'>").text('⚠️' + message + '⚠️').slideDown().delay(3500).hide(500));
+  $('#submit-tweet').prepend($("<span class='error'>").text(' ⚠️ ' + message + ' ⚠️').slideDown().delay(3500).hide(500));
     // .slideDown(100).show(5000)
 }
 
