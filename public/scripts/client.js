@@ -1,3 +1,4 @@
+//makes top nav arrow redirect to tweet box on click
 $('.scroll').click(() => {
   $('html,body').animate({ scrollTop: 0 }, 1000);
   $('#tweet-text').focus();
@@ -40,6 +41,7 @@ const createTweetElement = function (tweetObj) {
   return $tweet;
 };
 
+//loops through all tweets 
 const renderTweets = function (tweets) {
   const $container = $('#tweets-container')
   $container.empty();
@@ -63,18 +65,22 @@ const loadTweets = () => {
   });
 };
 
+//function to add custom error message
 const appendError = (message) => {
   $('#submit-tweet').prepend($("<span class='error'>").text(' ⚠️ ' + message + ' ⚠️').slideDown().delay(3500).hide(500));
 }
 
+//removes errors to keep multiple errors from popping up with repeated error inducing clicks
 const removeError = () => {
   $('.error').remove()
 }
 
+//resets countdoen to 140 characters 
 const resetCounter = () => {
   $('.counter').text(140);
 }
 
+//handles submit click and employs helper functions from above
 $(document).ready(function () {
   loadTweets();
   //form submit handler
