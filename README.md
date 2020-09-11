@@ -15,3 +15,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+!["Screenshot of desktop"](https://github.com/bainjen/tweeter/blob/master/docs/Tweeter_Desktop.png)
+!["Screenshot of mobile"](https://github.com/bainjen/tweeter/blob/master/docs/Tweeter_Mobile.png)
+!["Screenshot of tablet"](https://github.com/bainjen/tweeter/blob/master/docs/Tweeter_Tablet.png)
