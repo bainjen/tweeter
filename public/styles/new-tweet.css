@@ -84,12 +84,11 @@ button {
  }
 
  .new-tweet h2 {
-   width: 95%
+   width: 95%;
+   font-size: inherit;
  }
 
  form {
-   width: 95%
+   width: 95%;
  }
-
- 
 }

@@ -19,7 +19,7 @@
   display: flex; 
   justify-content: space-between;
   margin: 1em;
-  width: 90%
+  width: 90%;
 }
 
 .name-left{
@@ -103,7 +103,6 @@
 
 /* ++++++++MEDIA QUERY BELOW 768PX++++++++ */
 @media (max-width: 768px) {
-
   .tweet {
     width: 95%
   }

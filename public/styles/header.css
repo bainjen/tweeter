@@ -7,7 +7,6 @@
   height: 540px;
   width: 100%;
   color: #545149;
-  /* background-color: lightblue; */
   background-color: #ffffff; 
   background-image: url("https://www.transparenttextures.com/patterns/old-wall.png"); 
 }
@@ -38,8 +37,6 @@
     width: 25%;
     height: 80vh;
     color: #545149;
-    /* background-image: none;
-    background-color: #D1DDEF; */
   }
 
   .avatar-name {
@@ -47,7 +44,7 @@
     flex-direction: column;
   }
 
-  .name h2{
+  .name h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
