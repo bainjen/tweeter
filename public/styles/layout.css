@@ -1,18 +1,9 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
 html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
   box-sizing: inherit;
 }
-
-/*
- * Global layout stuff
- */
 
 body {
   color: #545149;
@@ -29,9 +20,8 @@ main {
   background-color: #D1DDEF;
 }
 
-
+/* ++++++++MEDIA QUERY ABOVE 1024PX++++++++ */
 @media (min-width: 1024px) {
-
   body {
     display: flex;
     color: #545149;
@@ -54,3 +44,4 @@ main {
     background-image: url("https://www.transparenttextures.com/patterns/old-wall.png"); 
   }
 }
+

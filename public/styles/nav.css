@@ -17,7 +17,6 @@ nav {
   align-items: center;
   justify-content: center;
   margin: 1.5em;
-
 }
 
 .right-side-nav p {
@@ -39,10 +38,26 @@ nav {
   margin: 1.5em; 
 }
 
-
+/* ++++++++MEDIA QUERY ABOVE 1024PX++++++++ */
 @media (min-width: 1024px) {
   nav {
     padding-left: 2vw;
     padding-right: 2vw;
+  }
+}
+
+/* ++++++++MEDIA QUERY BELOW 768PX++++++++ */
+@media (max-width: 768px) {
+
+ .right-side-nav {
+    margin: .25em .75em .25em .25em; 
+  }
+
+  #logo {
+    margin: .25em .25em .25em .75em;
+  }
+
+  nav span {
+    font-size: 28px; 
   }
 }

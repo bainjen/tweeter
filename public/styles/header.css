@@ -25,9 +25,8 @@
   font-weight: 300;
 }
 
-
+/* ++++++++MEDIA QUERY ABOVE 1024PX++++++++ */
 @media (min-width: 1024px) {
-
   .top-header {
     display: flex;
     flex-direction: column;
@@ -62,12 +61,13 @@
   #last-name {
     font-size: 32px;
     margin: 0px 2px 0px 2px;
-  }
+  }  
+}
 
-  .avatar {
-    /* background-color: #ffffff; 
-    background-image: url("https://www.transparenttextures.com/patterns/old-wall.png");  */
-      /* background-color: #D1DDEF; */
-  }
-  
+/* ++++++++MEDIA QUERY BELOW 768PX++++++++ */
+@media (max-width: 768px) {
+ .top-header {
+  padding-top: 140px;
+  height: 500px;
+ }
 }

@@ -8,14 +8,10 @@
 .tweet {
   width: 75%;
   margin: 1em;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
   border: 5px solid  #545149; 
 }
 
 .tweet:hover {
-  /* border: solid gray 2px; */
   box-shadow: 5px 10px #888888;
 }
 
@@ -53,14 +49,10 @@
 }
 
 #userID {
-  /* visibility: hidden; */
-  /* display: none;  */
   opacity: .5;
 }
 
 .tweet:hover #userID {
-  /* visibility: visible; */
-  /* display: block; */
   opacity: 1;
   font-weight: bold;
 }
@@ -76,20 +68,12 @@
 #flag:hover {
   color: mediumvioletred; 
 }
-/* .tweet-history article {
-  width: 90%;
-} */
-/* article.tweet-text {
-  color: green;
-} */
 
 .tweet-history footer {
-  /* width: 90%;  */
   margin: 1em;
   display: flex;
   justify-content: space-between;
 }
-
 
 .icons {
   display: flex;
@@ -99,10 +83,7 @@
   margin-right: .5em; 
 }
 
-
-/* .icons i {
-  margin: 20px, 20px, 20px, 20px;
-} */
+/* ++++++++MEDIA QUERY ABOVE 1024PX++++++++ */
 @media (min-width: 1024px) {
   .tweet-history {
     display: flex;
@@ -117,6 +98,54 @@
 
 .name-left h3 {
   margin-left: 10px; 
+  }
 }
 
+/* ++++++++MEDIA QUERY BELOW 768PX++++++++ */
+@media (max-width: 768px) {
+
+  .tweet {
+    width: 95%
+  }
+
+  #heart {
+    margin: 4px;
+  }
+  
+  #retweet {
+    margin: 4px;
+  }
+  
+  #flag {
+    margin: 4px;
+  }
+
+  .icons {
+    width: auto; 
+  }
+
+  .tweet p {
+    margin: .5em;
+  }
+
+  .tweet footer {
+    margin: .5em;
+  }
+
+  footer p {
+    font-size: 14px; 
+  }
+
+  .th-header {
+    margin: .5em; 
+    flex-wrap: wrap;
+  }
+
+  p {
+    font-size: 24px;
+  }
+
+  .display-tweet {
+    margin: 5px; 
+  }
 }
