@@ -6,11 +6,10 @@ $(document).ready(function () {
     //locating the counter element
     const counterElem = $(this).parent().children('.under-tweet-input').children('.counter')
     const remainingChars = 140 - currCharCount;
-    console.log(remainingChars)
     //updating counter elem on DOM to reflect current changes in remaining characters
     counterElem.text(remainingChars);
     if (remainingChars < 0) {
-      counterElem.css('color', 'red');
+      counterElem.css('color', 'mediumvioletred');
     } else {
       counterElem.css('color', '#545149');
     }

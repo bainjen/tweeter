@@ -38,5 +38,6 @@ main {
     padding-top: 15vh;
     background-color: #ffffff; 
     background-image: url("https://www.transparenttextures.com/patterns/old-wall.png"); 
+    width: 60%;
   }
 }

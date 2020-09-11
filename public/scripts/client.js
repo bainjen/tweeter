@@ -1,3 +1,8 @@
+$('.scroll').click(() => {
+  $('html,body').animate({ scrollTop: 0 }, 1000);
+  $('#tweet-text').focus();
+});
+
 //function to build html for tweets dynamically
 const createTweetElement = function (tweetObj) {
   const $tweet = $("<article class='tweet'>");
@@ -66,6 +71,10 @@ const removeError = () => {
   $('.error').remove()
 }
 
+const resetCounter = () => {
+  $('.counter').text(140);
+}
+
 $(document).ready(function () {
   loadTweets();
   //form submit handler
@@ -85,6 +94,7 @@ $(document).ready(function () {
         .then((response) => {
           loadTweets();
           $(this).children('textarea').val('');
+          resetCounter();
         })
     }
   });

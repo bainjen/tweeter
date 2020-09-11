@@ -44,12 +44,12 @@ button {
 }
 
 .error {
-  background-color: red; 
+  background-color: mediumvioletred; 
   opacity: .75;
   text-align: center;
   color: #FFFFFF; 
   font-weight: 600;
-  border: solid 3px red;
+  border: solid 3px mediumvioletred;
   border-radius: 5px;
   font-size: 24px;
 }
@@ -58,13 +58,13 @@ button {
 @media (min-width: 1024px) {
   .new-tweet h2 {
   font-size: 24px;
-  width: 85%; 
+  width: 95%; 
   padding-top: 5%; 
   }
 
   form {
     margin: .5em;
-    width: 85%;
+    width: 95%;
   }
 
 .tweet-text {

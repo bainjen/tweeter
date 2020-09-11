@@ -35,6 +35,10 @@ nav {
   font-family:'Bungee', sans-serif;
   margin: 1.5em; 
 }
+.scroll {
+  border: none; 
+  color: mediumvioletred;
+}
 
 /* ++++++++MEDIA QUERY ABOVE 1024PX++++++++ */
 @media (min-width: 1024px) {
